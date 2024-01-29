@@ -1,0 +1,37 @@
+.label {
+    font-weight: 700;
+	font-size: 1.05rem;
+	line-height: 120%;
+    letter-spacing: 0.05rem;
+}
+
+.input {
+    width: 100%;
+    background-color: transparent;
+    padding: 0.9em 1.2em;
+
+    margin-top: 0.2rem;
+    border-radius: 0.4rem;
+    border: 2px solid black;
+
+    font-size: 1rem;
+}
+
+.txt_field {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 2.5rem;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #86b7fe;
+    border-radius: 10px;
+}
+
+.txt_field input:focus {
+    border: 3px solid #86b7fe;
+}
