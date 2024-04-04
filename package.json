@@ -5,10 +5,10 @@
   "type": "commonjs",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "CI= npm run build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browser": {
     "fs": false,
