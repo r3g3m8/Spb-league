@@ -5,6 +5,7 @@ import styles from '../login/login.module.css'
 import Input from '@/components/Input'
 import Link from 'next/link';
 import axios from 'axios';
+import jwt from 'jsonwebtoken'
 
 function RegiterPage() {
     const [form_data, set_form_data] = useState({
@@ -74,11 +75,13 @@ function RegiterPage() {
                 <Input
                     label="Пароль"
                     name="password" 
+                    type='password'
                     onChange={handle_change}
                     value={form_data.password}
                 />
                 <Input
                     label="Подтверждение пароля"
+                    type='password'
                     name="confirmPassword"
                 />
                 <div className={styles.pass}>Забыли пароль?</div>
@@ -86,7 +89,7 @@ function RegiterPage() {
                     className={styles.submit} 
                     type='submit'
                     onClick={sign_in}>
-                    Войти
+                    Регистрация
                 </button>
                 <div className={styles.signup_link}>
                     <p>Ещё нет аккаунта?</p>

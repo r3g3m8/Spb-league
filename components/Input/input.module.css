@@ -19,7 +19,7 @@
 
 .txt_field {
     position: relative;
-    margin: 1.5rem 0;
+    margin-top: 1.5rem;
 }
 
 .txt_field input {
@@ -35,3 +35,7 @@
 .txt_field input:focus {
     border: 3px solid #86b7fe;
 }
+
+.input[type="file"] {
+    display: none;
+  }

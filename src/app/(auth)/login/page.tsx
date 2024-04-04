@@ -13,9 +13,22 @@ function LoginPage() {
     })
 
     useEffect(() => {
-        if (localStorage.getItem("jwt")) {
+        const token = localStorage.getItem("jwt")
+        if (token) {
+            console.log(token)
             //window.location.replace("/");
         }
+        axios.get(`${process.env.API_ADDRESS}/api/loginUser`)
+        .then((res) => {
+            if(!res.data){
+                console.log(res.data)
+            }
+            console.log(JSON.stringify(res.data));
+            window.location.replace("/");
+        })
+        .catch((error) => {
+            console.log("Errrrr:" + error.response.data)
+        });
     }, []);
 
     function handle_change(event: any) {

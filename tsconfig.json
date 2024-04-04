@@ -24,9 +24,11 @@
             "@/lib/*": ["./lib/*"],
             "@/docs/*": ["./docs/*"],
             "@/assets/*": ["./assets/*"],
+            "@/upload/*": ["/upload/*"],
             "@/data/*": ["./data/*"],
             "@/functions/*": ["./functions/*"],
-            "@/types/*": ["./types/*"]
+            "@/types/*": ["./types/*"],
+            "@doc/*": ["./doc/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

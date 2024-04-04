@@ -1,0 +1,37 @@
+/* styles.module.css */
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    min-height: calc(100vh - 10rem - 5rem); /* Высота контейнера равна высоте видимой части страницы */
+  }
+
+.table {
+    width: 70%;
+    border: 1px solid #f2f2f2;
+    border-radius: 15px;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .table th:hover {
+    cursor: pointer;
+  }
+  
+  .table td img {
+    width: 30px; /* Размер логотипа */
+    height: auto; /* Автоматическая высота */
+    margin-right: 8px; /* Отступ справа от изображения */
+  }
+  

@@ -1,0 +1,61 @@
+.main{
+    background-color: #DAF0FB;
+    padding: 2rem 5rem;
+    
+}
+
+.page {
+    height: 100vh;
+}
+
+.icon{
+    margin-left: 0.5rem;
+}
+
+.error{
+    font-weight: bold;
+    color: red;
+}
+
+.teams {
+    display: flex;
+    width: 100%;
+}
+
+.matchForm{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    width: 50%;
+}
+
+.teams > * {
+    width: 50%;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    background-color: #DAF0FB;
+    border: 1px solid #043b78;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.submit{
+    background-color: #043b78;
+    color: #fff;
+    border: 1px solid #043b78;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #2938a9;
+}

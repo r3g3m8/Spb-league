@@ -1,112 +1,114 @@
+.body {
+  margin: 0;
+}
+
+.content {
+  min-height: calc(100vh - 10rem);
+}
+
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
-}
-
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
-}
-
-.card span {
   display: inline-block;
-  transition: transform 200ms;
-}
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 4rem 0;
-}
-
-.center::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -400px;
-}
-
-.center::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.center::before,
-.center::after {
-  content: '';
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
+  background-image: url('../../public/back-main.jpg');
+  height: 100%; /* You must set a specified height */
+  width: 100%;
+  background-position: center;
+  background-size: cover; /* Resize the background image to cover the entire container */
+  color: #fff;
 }
 
 .logo {
-  position: relative;
+  display: block;
+  margin: 3rem auto;
+  height: 15rem;
+  width: auto;
 }
+
+.container {
+  max-width: 50%;
+  margin: 5rem auto; 
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.welcome{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  font-size: 36px;
+}
+
+.row > a{
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.block {
+  background-color: #DAF0FB;
+  height: 100%;
+  padding: 3rem 8rem;
+}
+
+.block1{
+  background-color: #d1d6d8;
+  height: 100%;
+  padding: 4rem 8rem;
+}
+
+.news{
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem 0;
+}
+
+.ticketBlock {
+  padding: 5rem;
+}
+
+.ticketCard {
+  background: #124581;
+  color: #fff;
+  height: 400px;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 3rem;
+  margin: 1rem 4rem;
+}
+
+.ticketCard > form {
+  padding: 1rem;
+}
+
+.ticketCard > form > input {
+  border-radius: 10px;
+  padding: 0.75rem 6rem 0.75rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.ticketCard > form > select{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -136,14 +138,6 @@
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
-  }
-
-  .card {
-    padding: 1rem 2.5rem;
-  }
-
-  .card h2 {
-    margin-bottom: 0.5rem;
   }
 
   .center {

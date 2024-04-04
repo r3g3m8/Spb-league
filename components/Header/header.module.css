@@ -1,13 +1,26 @@
-.header{
+.header, .mainHeader{
     display: flex;
     align-items: center;
-    background-color: lightcyan;
     justify-content: space-between;
     height: 5rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
+}
+
+.header{
+    background-color: lightcyan;
 }
 
 .flex{
     display: flex;
     align-items: center;
+}
+
+.mainHeader > a{
+    color: white;
+    font-weight: bold;
+}
+
+.header > a{
+    color: black;
+    font-weight: bold;
 }

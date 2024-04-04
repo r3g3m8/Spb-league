@@ -2,17 +2,20 @@ import styles from "./input.module.css";
 import { CSSProperties } from "react";
 
 type props = {
+    defaultValue?: string | number | readonly string[] | undefined;
     name: string;
     onChange?: (event: any) => void;
-    type?: "tel" | "email" | "password";
+    type?: "tel" | "email" | "password" | "file" | "date" | "number" | "time";
     placeholder?: string;
     label?: string;
     value?: string | number;
     className?: string;
     maxLength?: number;
     style?: CSSProperties;
-    list?: string;
+    pattern?: string;
     disabled?: boolean;
+    required?: boolean;
+
 };
 
 export default function Input(props: props) {
@@ -37,8 +40,10 @@ export default function Input(props: props) {
                 value={props.value}
                 maxLength={props.maxLength}
                 style={props.style ? props.style : {}}
-                list={props.list}
                 disabled={props.disabled}
+                required={props.required}
+                pattern={props.pattern}
+                defaultValue={props.defaultValue}
             />
         </div>
     );

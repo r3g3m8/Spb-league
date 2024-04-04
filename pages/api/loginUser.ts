@@ -2,13 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import dbContext from '../../src/app/(auth)/login/main';
 import jwt from 'jsonwebtoken';
 
-type Login = {
-    email: string,
-    password: string
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    let { get } = dbContext();
+    const { get } = dbContext();
 
     console.log(req.method);
     if (req.method === 'POST') {
@@ -20,13 +15,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(200).json({ success: true, token, user });
             console.log("Success!!!" + token)
           }
-          res.status(401).json({ success: false, error: 'No any' })
-        } catch (error) {
+          res.status(401).json({ success: false, error: 'No any user was found' + user })
+        } 
+        catch (error) {
           console.error('Error creating ABOBA:', error);
           res.status(500).json({ success: false, error: 'Internal Server ABOBA' });
         }
-      } else {
-        res.status(405).json({ success: false, error: 'Method Not ABOBA' });
+      } 
+    else if(req.method === 'GET'){
+      try {
+        const {
+          query: {name, token},
+          method,
+        } = req;
+
+        if(token){
+          const verify = jwt.verify(token.toString(), `${process.env.NEXTAUTH_SECRET}`);
+          if(verify){
+            res.status(200).json({ success: true, token });
+          }
+          res.status(401).json({ success: false, error: 'No any' })
+        }
+
+        res.status(401).json({ success: false, error: 'No any' })
+      } 
+
+      catch (error) {
+        console.error('Error creating ABOBA:', error);
+          res.status(500).json({ success: false, error: 'Internal Server ABOBA' });
       }
+
+    }
+    else {
+      res.status(405).json({ success: false, error: 'Method Not ABOBA' });
+    }
 }
 
